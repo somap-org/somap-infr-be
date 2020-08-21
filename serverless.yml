@@ -1,0 +1,16 @@
+# NOTE: update this with your service name
+service:
+  name: somap-cognito
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin # Load .env as environment variables
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: eu-central-1
+  accountId: 593794886287
+resources:
+  # Cognito
+  - ${file(resources/cognito/cognito-user-pool.yml)}
+  - ${file(resources/cognito/cognito-identity-pool.yml)}

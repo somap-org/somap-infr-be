@@ -1,0 +1,20 @@
+{
+  "name": "somap-cognito",
+  "version": "1.1.0",
+  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "scripts": {
+    "build:dev": "tsc && sls deploy",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts"
+  },
+  "author": "Luca Pirrone",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AnomalyInnovations/serverless-nodejs-starter.git"
+  },
+  "devDependencies": {
+    "serverless-bundle": "^1.4.0",
+    "serverless-dotenv-plugin": "^2.1.1",
+    "serverless-offline": "^5.3.3"
+  }
+}
