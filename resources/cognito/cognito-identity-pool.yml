@@ -68,7 +68,7 @@ Resources:
                       - ':'
                       - Ref: AWS::AccountId
                       - ':'
-                      - Ref: ApiGatewayRestApi
+                      - 'Fn::ImportValue': ${self:provider.stage}-ApiGatewayArn
                       - '/*'
 # Print out the Id of the Identity Pool that is created
 Outputs:
