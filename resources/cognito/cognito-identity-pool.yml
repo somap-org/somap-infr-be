@@ -27,20 +27,20 @@ Resources:
         email: "email"
         name: name
         picture: picture
-    UserPoolIdentityProviderGoogle:
-      Type: AWS::Cognito::UserPoolIdentityProvider
-      Properties:
-        UserPoolId: !Ref CognitoUserPoolAppUserPool
-        ProviderName: "Google"
-        ProviderDetails:
-          client_id: 384826966578-rqeg32h1mt24u2mp9prlq6cghrmbsdfr.apps.googleusercontent.com
-          client_secret: BfNMcUdkWUHvJ7zWq1fh67iQ
-          authorize_scopes: "profile email openid"
-        ProviderType: "Google"
-        AttributeMapping:
-          email: "email"
-          name: name
-          picture: picture
+  UserPoolIdentityProviderGoogle:
+    Type: AWS::Cognito::UserPoolIdentityProvider
+    Properties:
+      UserPoolId: !Ref CognitoUserPoolAppUserPool
+      ProviderName: "Google"
+      ProviderDetails:
+        client_id: 384826966578-rqeg32h1mt24u2mp9prlq6cghrmbsdfr.apps.googleusercontent.com
+        client_secret: BfNMcUdkWUHvJ7zWq1fh67iQ
+        authorize_scopes: "profile email openid"
+      ProviderType: "Google"
+      AttributeMapping:
+        email: "email"
+        name: name
+        picture: picture
   # IAM roles
   CognitoIdentityPoolRoles:
     Type: AWS::Cognito::IdentityPoolRoleAttachment
