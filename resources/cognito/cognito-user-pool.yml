@@ -23,21 +23,42 @@ Resources:
           RequireSymbols: false
           RequireUppercase: false
           TemporaryPasswordValidityDays: 7
-  CognitoUserPoolClient:
+  CognitoUserPoolAndroidClient:
     Type: AWS::Cognito::UserPoolClient
+    DependsOn:
+      - UserPoolIdentityProviderFacebook
+      - UserPoolIdentityProviderGoogle
     Properties:
       # Generate an app client name based on the stage
-      ClientName: ${self:service.name}-${self:provider.stage}-user-pool-client
+      ClientName: ${self:service.name}-${self:provider.stage}-android-client
       UserPoolId:
         Ref: CognitoUserPoolAppUserPool
       ExplicitAuthFlows:
-        - ADMIN_NO_SRP_AUTH
+        - ALLOW_ADMIN_USER_PASSWORD_AUTH
+        - ALLOW_CUSTOM_AUTH
+        - ALLOW_USER_SRP_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
       GenerateSecret: false
       ReadAttributes:
         - custom:userType
       WriteAttributes:
         - custom:userType
-
+      AllowedOAuthFlowsUserPoolClient: true
+      AllowedOAuthFlows:
+        - code
+      AllowedOAuthScopes:
+        - email
+        - openid
+        - profile
+        - aws.cognito.signin.user.admin
+      CallbackURLs:
+        - somap:// #TODO CALLBACK LOGIN PER ANDROID
+      LogoutURLs:
+        - somap:// #TODO CALLBACK LOGOUT PER ANDROID
+      SupportedIdentityProviders:
+        - COGNITO
+        - Facebook
+        - Google
 # Print out the Id of the User Pool that is created
 Outputs:
   UserPoolId:
