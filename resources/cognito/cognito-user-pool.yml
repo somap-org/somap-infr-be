@@ -64,6 +64,6 @@ Outputs:
   UserPoolId:
     Value:
       Ref: CognitoUserPoolAppUserPool
-  UserPoolClientId:
+  CognitoUserPoolAndroidClientId:
     Value:
-      Ref: CognitoUserPoolClient
+      Ref: CognitoUserPoolAndroidClient
