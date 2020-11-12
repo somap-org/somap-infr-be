@@ -10,10 +10,37 @@ Resources:
       # Link to our User Pool
       CognitoIdentityProviders:
         - ClientId:
-            Ref: CognitoUserPoolClient
+            Ref: CognitoUserPoolAndroidClient
           ProviderName:
             Fn::GetAtt: [ "CognitoUserPoolAppUserPool", "ProviderName" ]
-
+  UserPoolIdentityProviderFacebook:
+    Type: AWS::Cognito::UserPoolIdentityProvider
+    Properties:
+      UserPoolId: !Ref CognitoUserPoolAppUserPool
+      ProviderName: "Facebook"
+      ProviderDetails:
+        client_id: 3279626948782169
+        client_secret: 47afe19c5dbe59a224ff185bee1b6c2c
+        authorize_scopes: "public_profile,email"
+      ProviderType: "Facebook"
+      AttributeMapping:
+        email: "email"
+        name: name
+        picture: picture
+    UserPoolIdentityProviderGoogle:
+      Type: AWS::Cognito::UserPoolIdentityProvider
+      Properties:
+        UserPoolId: !Ref CognitoUserPoolAppUserPool
+        ProviderName: "Google"
+        ProviderDetails:
+          client_id: 384826966578-rqeg32h1mt24u2mp9prlq6cghrmbsdfr.apps.googleusercontent.com
+          client_secret: BfNMcUdkWUHvJ7zWq1fh67iQ
+          authorize_scopes: "profile email openid"
+        ProviderType: "Google"
+        AttributeMapping:
+          email: "email"
+          name: name
+          picture: picture
   # IAM roles
   CognitoIdentityPoolRoles:
     Type: AWS::Cognito::IdentityPoolRoleAttachment
