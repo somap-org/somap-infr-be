@@ -23,6 +23,8 @@ Resources:
           RequireSymbols: false
           RequireUppercase: false
           TemporaryPasswordValidityDays: 7
+      VerificationMessageTemplate:
+        DefaultEmailOption: CONFIRM_WITH_LINK
   CognitoUserPoolAndroidClient:
     Type: AWS::Cognito::UserPoolClient
     DependsOn:
@@ -41,8 +43,10 @@ Resources:
       GenerateSecret: false
       ReadAttributes:
         - custom:userType
+        - email
       WriteAttributes:
         - custom:userType
+        - email
       AllowedOAuthFlowsUserPoolClient: true
       AllowedOAuthFlows:
         - code
