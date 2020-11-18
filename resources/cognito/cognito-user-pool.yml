@@ -41,12 +41,6 @@ Resources:
         - ALLOW_USER_SRP_AUTH
         - ALLOW_REFRESH_TOKEN_AUTH
       GenerateSecret: false
-      ReadAttributes:
-        - custom:userType
-        - email
-      WriteAttributes:
-        - custom:userType
-        - email
       AllowedOAuthFlowsUserPoolClient: true
       AllowedOAuthFlows:
         - code
@@ -63,6 +57,12 @@ Resources:
         - COGNITO
         - Facebook
         - Google
+  UserPoolDomain:
+    Type: AWS::Cognito::UserPoolDomain
+    Properties:
+      Domain: ${self:service.alias}-${self:provider.stage}-domain
+      UserPoolId:
+        Ref: CognitoUserPoolAppUserPool
 # Print out the Id of the User Pool that is created
 Outputs:
   UserPoolId:

@@ -1,6 +1,7 @@
 # NOTE: update this with your service name
 service:
   name: somap-cognito
+  alias: somap
 plugins:
   - serverless-offline
   - serverless-dotenv-plugin # Load .env as environment variables
