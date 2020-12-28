@@ -2,9 +2,6 @@
 service:
   name: somap-cognito
   alias: somap
-plugins:
-  - serverless-offline
-  - serverless-dotenv-plugin # Load .env as environment variables
 provider:
   name: aws
   runtime: nodejs10.x

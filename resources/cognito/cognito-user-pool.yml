@@ -12,12 +12,12 @@ Resources:
       Schema:
         - AttributeDataType: String
           DeveloperOnlyAttribute: false
-          Mutable: false
+          Mutable: true
           Name: userType
-          Required: false
+          Required: true
         - AttributeDataType: String
           DeveloperOnlyAttribute: false
-          Mutable: false
+          Mutable: true
           Name: userId
           Required: false
       Policies:
