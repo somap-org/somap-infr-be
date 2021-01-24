@@ -20,6 +20,16 @@ Resources:
           Mutable: true
           Name: userId
           Required: false
+        - AttributeDataType: String
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Name: termsConditions
+          Required: false
+        - AttributeDataType: String
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Name: privacyCookiePolicy
+          Required: false
       Policies:
         PasswordPolicy:
           MinimumLength: 8
