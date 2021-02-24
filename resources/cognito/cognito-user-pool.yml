@@ -30,6 +30,11 @@ Resources:
           Mutable: true
           Name: privacyCookiePolicy
           Required: false
+        - AttributeDataType: String
+          DeveloperOnlyAttribute: false
+          Mutable: true
+          Name: referralCode
+          Required: false
       Policies:
         PasswordPolicy:
           MinimumLength: 8
