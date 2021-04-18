@@ -12,3 +12,5 @@ resources:
   # Cognito
   - ${file(resources/cognito/cognito-user-pool.yml)}
   - ${file(resources/cognito/cognito-identity-pool.yml)}
+  # SES Template
+  - ${file(resources/ses/template.yml)}
