@@ -6,8 +6,8 @@ provider:
   name: aws
   runtime: nodejs10.x
   stage: dev
-  region: eu-central-1
-  accountId: 593794886287
+  region: us-east-1
+  accountId: 482385118572
 resources:
   # Cognito
   - ${file(resources/cognito/cognito-user-pool.yml)}
