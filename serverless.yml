@@ -1,6 +1,6 @@
 # NOTE: update this with your service name
 service:
-  name: somap-cognito
+  name: somap-infr-be
   alias: somap
 provider:
   name: aws
