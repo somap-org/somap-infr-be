@@ -7,7 +7,7 @@ provider:
   runtime: nodejs10.x
   stage: dev
   region: us-east-1
-  accountId: 482385118572
+  accountId: ${file(./environment/${self:provider.stage}.environment.json):ACCOUNT_ID}
 resources:
   # Cognito
   - ${file(resources/cognito/cognito-user-pool.yml)}
