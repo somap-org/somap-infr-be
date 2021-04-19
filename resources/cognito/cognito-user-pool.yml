@@ -23,6 +23,11 @@ Resources:
         - AttributeDataType: String
           DeveloperOnlyAttribute: false
           Mutable: true
+          Name: placeId
+          Required: false
+        - AttributeDataType: String
+          DeveloperOnlyAttribute: false
+          Mutable: true
           Name: termsConditions
           Required: false
         - AttributeDataType: String
