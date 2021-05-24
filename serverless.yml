@@ -15,5 +15,5 @@ resources:
   - ${file(resources/cognito/cognito-identity-pool.yml)}
   # SES Template
   - ${file(resources/ses/template.yml)}
-    # S3
-    - ${file(resources/s3/s3.yml)}
+  # S3
+  - ${file(resources/s3/s3.yml)}
