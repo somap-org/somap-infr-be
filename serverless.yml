@@ -7,7 +7,7 @@ provider:
   runtime: nodejs10.x
   stage: ${opt:stage, 'dev'}
   region: us-east-1
-  photosBucketName: "somapPhotosBucket"
+  photosBucketName: "somap-photos-bucket"
   accountId: ${file(./environment/${self:provider.stage}.environment.json):ACCOUNT_ID}
 resources:
   # Cognito
