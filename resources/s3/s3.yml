@@ -1,0 +1,18 @@
+Resources:
+  PhotosBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${self:service.name}-${self:provider.photosBucketName}-${self:provider.stage}
+      CorsConfiguration:
+        CorsRules:
+          -
+            AllowedOrigins:
+              - "*"
+            AllowedMethods:
+              - POST
+              - GET
+              - PUT
+              - DELETE
+              - HEAD
+            AllowedHeaders:
+              - "*"
