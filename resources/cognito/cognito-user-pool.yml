@@ -60,6 +60,11 @@ Resources:
                 - Ref: AWS::AccountId
                 - 'function'
                 - somap-api-${self:provider.stage}-signUp
+      EmailConfiguration:
+        EmailSendingAccount: DEVELOPER
+        From: noreply@somap.app
+        ReplyToEmailAddress: somap.business@gmail.com
+        SourceArn: arn:aws:ses:us-east-1:031614885447:identity/somap.app
   CognitoUserPoolAndroidClient:
     Type: AWS::Cognito::UserPoolClient
     DependsOn:
